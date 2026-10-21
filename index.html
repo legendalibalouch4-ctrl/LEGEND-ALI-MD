@@ -14,22 +14,40 @@ body{
  align-items:center;
  padding:20px;
  background:
- linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.72)),
+ linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.82)),
  url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=90');
  background-size:cover;
  background-position:center;
  background-attachment:fixed;
 }
 
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ background:
+ radial-gradient(ellipse at 25% 25%,rgba(255,0,30,.28),transparent 35%),
+ radial-gradient(ellipse at 75% 25%,rgba(255,0,30,.28),transparent 35%);
+ animation:eyes 2s infinite alternate;
+}
+
+@keyframes eyes{
+ from{opacity:.35}
+ to{opacity:1}
+}
+
 .card{
+ position:relative;
+ z-index:1;
  width:100%;
  max-width:420px;
  padding:28px 22px;
  text-align:center;
- background:rgba(8,10,25,.78);
- border:1px solid #00eaff;
+ background:rgba(8,5,15,.86);
+ border:1px solid #ff1744;
  border-radius:24px;
- box-shadow:0 0 25px #00bfff;
+ box-shadow:0 0 25px #ff003c, inset 0 0 20px #420015;
  backdrop-filter:blur(8px);
 }
 
@@ -37,9 +55,9 @@ body{
 
 h1{
  margin:12px 0;
- color:#00eaff;
+ color:#ff244d;
  font-size:29px;
- text-shadow:0 0 15px #00cfff;
+ text-shadow:0 0 8px red,0 0 20px #ff003c;
 }
 
 .subtitle{
@@ -52,9 +70,9 @@ input{
  width:100%;
  padding:14px;
  margin:10px 0;
- border:1px solid #00eaff;
+ border:1px solid #ff244d;
  border-radius:12px;
- background:#111629;
+ background:#111018;
  color:white;
  font-size:16px;
  outline:none;
@@ -64,9 +82,9 @@ button{
  width:100%;
  padding:14px;
  margin-top:12px;
- border:0;
+ border:1px solid #ff4769;
  border-radius:30px;
- background:linear-gradient(90deg,#00d9ff,#873bff);
+ background:linear-gradient(90deg,#ff003c,#7900ff);
  color:white;
  font-size:15px;
  font-weight:bold;
@@ -89,9 +107,10 @@ button{
 
 footer{
  margin-top:22px;
- color:#00eaff;
+ color:#ff4769;
  font-size:12px;
 }
+
 </style></head><body>
 <main class="card">
  <div class="crown">👑</div>
@@ -100,23 +119,23 @@ footer{
 placeholder="Enter WhatsApp number with country code">
 
  <button onclick="generateCode()">
-  GENERATE PAIRING CODE
- </button> <div id="result"></div> <p class="note">
-  Official LEGEND ALI MD WhatsApp Bot<br>
-  Secure connection • Anime Edition
+ GENERATE PAIRING CODE
+ </button> <div id="result"></div> <button onclick="playWelcome()">
+ 🔊 PLAY WELCOME AUDIO
+ </button> <p class="note">
+ Official LEGEND ALI MD WhatsApp Bot<br>
+ Secure connection • Dark Anime Edition
  </p> <footer>POWERED BY LEGEND ALI 👑</footer>
 </main><audio id="welcomeAudio" preload="auto">
  <source src="welcome.mp3" type="audio/mpeg">
 </audio><script>
 const audio=document.getElementById("welcomeAudio");
 
-window.addEventListener("load",()=>{
+function playWelcome(){
  audio.play().catch(()=>{
-  document.addEventListener("click",()=>{
-   audio.play().catch(()=>{});
-  },{once:true});
+  alert("Audio nahi chal raha. Check karo ke welcome.mp3 file repository mein mojood hai.");
  });
-});
+}
 
 async function generateCode(){
  const number=document.getElementById("number").value.trim();
