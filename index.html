@@ -1,162 +1,305 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEGEND ALI MD</title><style>
+
+<title>LEGEND ALI MD | Pairing</title>
+
+<style>
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   font-family: Arial, sans-serif;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
   background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.82)),
-    url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=90');
+    linear-gradient(
+      rgba(3, 5, 18, 0.68),
+      rgba(3, 5, 18, 0.88)
+    ),
+    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-body:before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 25% 25%,rgba(255,0,30,.28),transparent 35%),
-    radial-gradient(ellipse at 75% 25%,rgba(255,0,30,.28),transparent 35%);
-  animation: eyes 2s infinite alternate;
-}
-
-@keyframes eyes {
-  from { opacity: .35; }
-  to { opacity: 1; }
-}
-
 .card {
-  position: relative;
-  z-index: 1;
   width: 100%;
-  max-width: 420px;
+  max-width: 390px;
   padding: 28px 22px;
   text-align: center;
-  background: rgba(8,5,15,.86);
-  border: 1px solid #ff1744;
-  border-radius: 24px;
-  box-shadow: 0 0 25px #ff003c, inset 0 0 20px #420015;
+  background: rgba(5, 8, 25, 0.88);
+  border: 1px solid #5577ff;
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px #315bff66,
+    0 0 45px #9c27b055;
   backdrop-filter: blur(8px);
 }
 
-.crown {
-  font-size: 45px;
-}
-
 h1 {
-  margin: 12px 0;
-  color: #ff244d;
-  font-size: 29px;
-  text-shadow: 0 0 8px red, 0 0 20px #ff003c;
+  color: #a9c5ff;
+  font-size: 27px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px #426bff;
 }
 
 .subtitle {
-  color: #ffe18a;
   font-size: 14px;
-  margin-bottom: 22px;
+  color: #e1d7ff;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 9px;
+  color: #d7dcff;
 }
 
 input {
   width: 100%;
   padding: 14px;
-  margin: 10px 0;
-  border: 1px solid #ff244d;
-  border-radius: 12px;
-  background: #111018;
+  margin-bottom: 14px;
   color: white;
+  background: #0c1027;
+  border: 1px solid #536bff;
+  border-radius: 10px;
   font-size: 16px;
   outline: none;
 }
 
+input:focus {
+  border-color: #b5c8ff;
+  box-shadow: 0 0 12px #536bff66;
+}
+
 button,
-.contact-button {
+.owner-btn {
   display: block;
   width: 100%;
   padding: 14px;
-  margin-top: 12px;
-  border: 1px solid #ff4769;
-  border-radius: 30px;
-  background: linear-gradient(90deg,#ff003c,#7900ff);
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(90deg, #245bff, #8b35d6);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.owner-btn {
+  background: linear-gradient(90deg, #171d42, #5531a8);
+  border: 1px solid #718bff;
 }
 
 #result {
+  display: none;
   margin-top: 18px;
+  padding: 15px;
+  border: 1px solid #536bff;
+  border-radius: 12px;
+  background: #080d22;
+}
+
+#pairCode {
+  display: block;
+  color: #b9cbff;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 12px 0;
   overflow-wrap: anywhere;
-  color: #ffe18a;
-  font-size: 16px;
 }
 
-.note {
-  margin-top: 18px;
-  color: #ddd;
-  font-size: 12px;
+#message {
+  color: #d5d9f4;
+  font-size: 13px;
   line-height: 1.6;
+  margin-top: 14px;
 }
 
-footer {
+.footer {
   margin-top: 22px;
-  color: #ff4769;
+  color: #a9b0d1;
   font-size: 12px;
+  line-height: 1.8;
 }
-</style></head><body><main class="card">  <div class="crown">👑</div>  <h1>LEGEND ALI MD</h1>  <p class="subtitle">
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+  <h1>👑 LEGEND ALI MD</h1>
+
+  <p class="subtitle">
     WELCOME TO THE ALI WORLD ✨
-  </p><input
-id="number"
-type="tel"
-placeholder="Enter WhatsApp number with country code"
+  </p>
 
-«»
+  <form id="pairForm">
 
-  <button onclick="generateCode()">
-    GENERATE PAIRING CODE
-  </button>  <div id="result"></div><a
-class="contact-button"
-href="https://wa.me/923200352181"
-target="_blank"
-rel="noopener noreferrer"
+    <label for="phone">
+      Enter WhatsApp number with country code
+    </label>
 
-«»
+    <input
+      id="phone"
+      type="tel"
+      inputmode="numeric"
+      placeholder="923001234567"
+      autocomplete="tel"
+      required
+    >
 
-💬 CONTACT OWNER 👑
+    <button id="generateBtn" type="submit">
+      GENERATE PAIRING CODE
+    </button>
 
-  </a>  <p class="note">
+  </form>
+
+  <a
+    class="owner-btn"
+    href="https://wa.me/923200352181"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    💬 CONTACT OWNER 👑
+  </a>
+
+  <div id="result" aria-live="polite">
+    <p>Your Pairing Code</p>
+    <span id="pairCode"></span>
+    <button id="copyBtn" type="button">
+      COPY PAIRING CODE
+    </button>
+  </div>
+
+  <p id="message" aria-live="polite"></p>
+
+  <div class="footer">
     Official LEGEND ALI MD WhatsApp Bot<br>
-    Secure connection • Dark Anime Edition
-  </p>  <footer>
+    Secure Connection • Gojo Dark Edition<br>
     POWERED BY LEGEND ALI 👑
-  </footer></main><script>
-async function generateCode() {
-  const number = document.getElementById("number").value.trim();
-  const result = document.getElementById("result");
+  </div>
 
-  if (!number) {
-    result.textContent = "Please enter your WhatsApp number.";
+</main>
+
+<script>
+/*
+  IMPORTANT:
+  Add your actual backend URL below.
+  The backend must accept POST /code with:
+  { "phone": "923001234567" }
+
+  It must return JSON such as:
+  { "code": "ABCD1234" }
+
+  Do not put WhatsApp session credentials here.
+*/
+
+const API_URL = "https://YOUR-BACKEND-URL/code";
+
+const form = document.getElementById("pairForm");
+const phoneInput = document.getElementById("phone");
+const generateBtn = document.getElementById("generateBtn");
+const result = document.getElementById("result");
+const pairCode = document.getElementById("pairCode");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const phone = phoneInput.value.replace(/\D/g, "");
+
+  if (phone.length < 8 || phone.length > 15) {
+    message.textContent =
+      "Please enter a valid number with country code.";
     return;
   }
 
-  result.textContent =
-    "Pairing backend abhi connect nahi hai. Backend URL configure karna hoga.";
-}
-</script></body>
+  if (API_URL.includes("YOUR-BACKEND-URL")) {
+    message.textContent =
+      "Pairing backend abhi connect nahi hai. Owner se backend setup karwao.";
+    return;
+  }
+
+  generateBtn.disabled = true;
+  generateBtn.textContent = "GENERATING...";
+  message.textContent = "";
+  result.style.display = "none";
+  pairCode.textContent = "";
+
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ phone })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.error || "Pairing request failed."
+      );
+    }
+
+    if (!data.code) {
+      throw new Error(
+        "Backend ne pairing code return nahi kiya."
+      );
+    }
+
+    pairCode.textContent = data.code;
+    result.style.display = "block";
+
+    message.textContent =
+      "Code ko WhatsApp Linked Devices pairing screen par use karo.";
+
+  } catch (error) {
+    message.textContent =
+      "Pairing error: " + error.message;
+  } finally {
+    generateBtn.disabled = false;
+    generateBtn.textContent = "GENERATE PAIRING CODE";
+  }
+});
+
+document.getElementById("copyBtn")
+  .addEventListener("click", async function() {
+    try {
+      await navigator.clipboard.writeText(
+        pairCode.textContent
+      );
+      message.textContent = "Pairing code copied!";
+    } catch {
+      message.textContent =
+        "Code ko press karke manually copy karo.";
+    }
+  });
+</script>
+
+</body>
 </html>
