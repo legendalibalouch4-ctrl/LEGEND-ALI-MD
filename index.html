@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEGEND ALI MD | Pairing</title><style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=85');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  padding: 30px 20px;
+  border: 1px solid #00eaff;
+  border-radius: 22px;
+  background: rgba(10,10,25,.78);
+  box-shadow: 0 0 25px #00d9ff;
+}
+
+.crown {
+  font-size: 48px;
+}
+
+h1 {
+  color: #00eeff;
+  font-size: 29px;
+  margin: 12px 0;
+  text-shadow: 0 0 15px #00c8ff;
+}
+
+.subtitle {
+  color: #ffda79;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.anime {
+  font-size: 20px;
+  margin: 18px 0;
+}
+
+.welcome {
+  font-size: 17px;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00d9ff, #8a2be2);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+.note {
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+footer {
+  font-size: 12px;
+  color: #00eaff;
+  margin-top: 22px;
+}
+</style></head><body><div class="card">
+  <div class="crown">👑</div>  <h1>LEGEND ALI MD</h1>  <p class="subtitle">WELCOME TO THE ALI WORLD ✨</p>  <div class="anime">⚡ ANIME WORLD ⚡</div>  <p class="welcome">🎵 WELCOME TO THE ALI WORLD 🎵</p>  <button onclick="playWelcome()">
+    ▶ PLAY WELCOME AUDIO
+  </button>  <audio id="welcomeAudio" preload="none">
+    <source src="welcome.mp3" type="audio/mpeg">
+  </audio>  <p class="note">
+    Tap the button to play the welcome audio.
+  </p>  <footer>POWERED BY LEGEND ALI 👑</footer>
+</div><script>
+function playWelcome() {
+  const audio = document.getElementById("welcomeAudio");
+
+  audio.play().catch(() => {
+    alert("Welcome audio file is not uploaded yet!");
+  });
+}
+</script></body>
+          </html>
