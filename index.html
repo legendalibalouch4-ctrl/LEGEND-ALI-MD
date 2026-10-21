@@ -3,151 +3,160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEGEND ALI MD</title><style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
- min-height:100vh;
- font-family:Arial,sans-serif;
- color:white;
- display:flex;
- justify-content:center;
- align-items:center;
- padding:20px;
- background:
- linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.82)),
- url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=90');
- background-size:cover;
- background-position:center;
- background-attachment:fixed;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body:before{
- content:"";
- position:fixed;
- inset:0;
- pointer-events:none;
- background:
- radial-gradient(ellipse at 25% 25%,rgba(255,0,30,.28),transparent 35%),
- radial-gradient(ellipse at 75% 25%,rgba(255,0,30,.28),transparent 35%);
- animation:eyes 2s infinite alternate;
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.82)),
+    url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=90');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-@keyframes eyes{
- from{opacity:.35}
- to{opacity:1}
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 25% 25%,rgba(255,0,30,.28),transparent 35%),
+    radial-gradient(ellipse at 75% 25%,rgba(255,0,30,.28),transparent 35%);
+  animation: eyes 2s infinite alternate;
 }
 
-.card{
- position:relative;
- z-index:1;
- width:100%;
- max-width:420px;
- padding:28px 22px;
- text-align:center;
- background:rgba(8,5,15,.86);
- border:1px solid #ff1744;
- border-radius:24px;
- box-shadow:0 0 25px #ff003c, inset 0 0 20px #420015;
- backdrop-filter:blur(8px);
+@keyframes eyes {
+  from { opacity: .35; }
+  to { opacity: 1; }
 }
 
-.crown{font-size:45px}
-
-h1{
- margin:12px 0;
- color:#ff244d;
- font-size:29px;
- text-shadow:0 0 8px red,0 0 20px #ff003c;
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 22px;
+  text-align: center;
+  background: rgba(8,5,15,.86);
+  border: 1px solid #ff1744;
+  border-radius: 24px;
+  box-shadow: 0 0 25px #ff003c, inset 0 0 20px #420015;
+  backdrop-filter: blur(8px);
 }
 
-.subtitle{
- color:#ffe18a;
- font-size:14px;
- margin-bottom:22px;
+.crown {
+  font-size: 45px;
 }
 
-input{
- width:100%;
- padding:14px;
- margin:10px 0;
- border:1px solid #ff244d;
- border-radius:12px;
- background:#111018;
- color:white;
- font-size:16px;
- outline:none;
+h1 {
+  margin: 12px 0;
+  color: #ff244d;
+  font-size: 29px;
+  text-shadow: 0 0 8px red, 0 0 20px #ff003c;
 }
 
-button{
- width:100%;
- padding:14px;
- margin-top:12px;
- border:1px solid #ff4769;
- border-radius:30px;
- background:linear-gradient(90deg,#ff003c,#7900ff);
- color:white;
- font-size:15px;
- font-weight:bold;
- cursor:pointer;
+.subtitle {
+  color: #ffe18a;
+  font-size: 14px;
+  margin-bottom: 22px;
 }
 
-#result{
- margin-top:18px;
- overflow-wrap:anywhere;
- color:#ffe18a;
- font-size:16px;
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid #ff244d;
+  border-radius: 12px;
+  background: #111018;
+  color: white;
+  font-size: 16px;
+  outline: none;
 }
 
-.note{
- margin-top:18px;
- color:#ddd;
- font-size:12px;
- line-height:1.6;
+button,
+.contact-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: 1px solid #ff4769;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#ff003c,#7900ff);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-footer{
- margin-top:22px;
- color:#ff4769;
- font-size:12px;
+#result {
+  margin-top: 18px;
+  overflow-wrap: anywhere;
+  color: #ffe18a;
+  font-size: 16px;
 }
 
-</style></head><body>
-<main class="card">
- <div class="crown">👑</div>
- <h1>LEGEND ALI MD</h1>
- <p class="subtitle">WELCOME TO THE ALI WORLD ✨</p><input id="number" type="tel"
-placeholder="Enter WhatsApp number with country code">
-
- <button onclick="generateCode()">
- GENERATE PAIRING CODE
- </button> <div id="result"></div> <button onclick="playWelcome()">
- 🔊 PLAY WELCOME AUDIO
- </button> <p class="note">
- Official LEGEND ALI MD WhatsApp Bot<br>
- Secure connection • Dark Anime Edition
- </p> <footer>POWERED BY LEGEND ALI 👑</footer>
-</main><audio id="welcomeAudio" preload="auto">
- <source src="welcome.mp3" type="audio/mpeg">
-</audio><script>
-const audio=document.getElementById("welcomeAudio");
-
-function playWelcome(){
- audio.play().catch(()=>{
-  alert("Audio nahi chal raha. Check karo ke welcome.mp3 file repository mein mojood hai.");
- });
+.note {
+  margin-top: 18px;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
-async function generateCode(){
- const number=document.getElementById("number").value.trim();
- const result=document.getElementById("result");
+footer {
+  margin-top: 22px;
+  color: #ff4769;
+  font-size: 12px;
+}
+</style></head><body><main class="card">  <div class="crown">👑</div>  <h1>LEGEND ALI MD</h1>  <p class="subtitle">
+    WELCOME TO THE ALI WORLD ✨
+  </p><input
+id="number"
+type="tel"
+placeholder="Enter WhatsApp number with country code"
 
- if(!number){
-  result.textContent="Please enter your WhatsApp number.";
-  return;
- }
+«»
 
- result.textContent=
- "Pairing backend abhi connect nahi hai. Backend URL configure karna hoga.";
+  <button onclick="generateCode()">
+    GENERATE PAIRING CODE
+  </button>  <div id="result"></div><a
+class="contact-button"
+href="https://wa.me/923200352181"
+target="_blank"
+rel="noopener noreferrer"
+
+«»
+
+💬 CONTACT OWNER 👑
+
+  </a>  <p class="note">
+    Official LEGEND ALI MD WhatsApp Bot<br>
+    Secure connection • Dark Anime Edition
+  </p>  <footer>
+    POWERED BY LEGEND ALI 👑
+  </footer></main><script>
+async function generateCode() {
+  const number = document.getElementById("number").value.trim();
+  const result = document.getElementById("result");
+
+  if (!number) {
+    result.textContent = "Please enter your WhatsApp number.";
+    return;
+  }
+
+  result.textContent =
+    "Pairing backend abhi connect nahi hai. Backend URL configure karna hoga.";
 }
 </script></body>
 </html>
