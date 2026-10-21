@@ -2,111 +2,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEGEND ALI MD | Pairing</title><style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<title>LEGEND ALI MD</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+ min-height:100vh;
+ font-family:Arial,sans-serif;
+ color:white;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:20px;
+ background:
+ linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.72)),
+ url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=90');
+ background-size:cover;
+ background-position:center;
+ background-attachment:fixed;
 }
 
-body {
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.8)),
-    url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=85');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.card{
+ width:100%;
+ max-width:420px;
+ padding:28px 22px;
+ text-align:center;
+ background:rgba(8,10,25,.78);
+ border:1px solid #00eaff;
+ border-radius:24px;
+ box-shadow:0 0 25px #00bfff;
+ backdrop-filter:blur(8px);
 }
 
-.card {
-  width: 90%;
-  max-width: 400px;
-  padding: 30px 20px;
-  border: 1px solid #00eaff;
-  border-radius: 22px;
-  background: rgba(10,10,25,.78);
-  box-shadow: 0 0 25px #00d9ff;
+.crown{font-size:45px}
+
+h1{
+ margin:12px 0;
+ color:#00eaff;
+ font-size:29px;
+ text-shadow:0 0 15px #00cfff;
 }
 
-.crown {
-  font-size: 48px;
+.subtitle{
+ color:#ffe18a;
+ font-size:14px;
+ margin-bottom:22px;
 }
 
-h1 {
-  color: #00eeff;
-  font-size: 29px;
-  margin: 12px 0;
-  text-shadow: 0 0 15px #00c8ff;
+input{
+ width:100%;
+ padding:14px;
+ margin:10px 0;
+ border:1px solid #00eaff;
+ border-radius:12px;
+ background:#111629;
+ color:white;
+ font-size:16px;
+ outline:none;
 }
 
-.subtitle {
-  color: #ffda79;
-  margin-bottom: 20px;
-  font-size: 14px;
+button{
+ width:100%;
+ padding:14px;
+ margin-top:12px;
+ border:0;
+ border-radius:30px;
+ background:linear-gradient(90deg,#00d9ff,#873bff);
+ color:white;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer;
 }
 
-.anime {
-  font-size: 20px;
-  margin: 18px 0;
+#result{
+ margin-top:18px;
+ overflow-wrap:anywhere;
+ color:#ffe18a;
+ font-size:16px;
 }
 
-.welcome {
-  font-size: 17px;
-  color: #fff;
-  margin: 20px 0;
-  font-weight: bold;
+.note{
+ margin-top:18px;
+ color:#ddd;
+ font-size:12px;
+ line-height:1.6;
 }
 
-button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(90deg, #00d9ff, #8a2be2);
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 12px;
+footer{
+ margin-top:22px;
+ color:#00eaff;
+ font-size:12px;
 }
+</style></head><body>
+<main class="card">
+ <div class="crown">👑</div>
+ <h1>LEGEND ALI MD</h1>
+ <p class="subtitle">WELCOME TO THE ALI WORLD ✨</p><input id="number" type="tel"
+placeholder="Enter WhatsApp number with country code">
 
-button:hover {
-  transform: scale(1.03);
-}
+ <button onclick="generateCode()">
+  GENERATE PAIRING CODE
+ </button> <div id="result"></div> <p class="note">
+  Official LEGEND ALI MD WhatsApp Bot<br>
+  Secure connection • Anime Edition
+ </p> <footer>POWERED BY LEGEND ALI 👑</footer>
+</main><audio id="welcomeAudio" preload="auto">
+ <source src="welcome.mp3" type="audio/mpeg">
+</audio><script>
+const audio=document.getElementById("welcomeAudio");
 
-.note {
-  color: #ccc;
-  font-size: 12px;
-  margin-top: 18px;
-}
+window.addEventListener("load",()=>{
+ audio.play().catch(()=>{
+  document.addEventListener("click",()=>{
+   audio.play().catch(()=>{});
+  },{once:true});
+ });
+});
 
-footer {
-  font-size: 12px;
-  color: #00eaff;
-  margin-top: 22px;
-}
-</style></head><body><div class="card">
-  <div class="crown">👑</div>  <h1>LEGEND ALI MD</h1>  <p class="subtitle">WELCOME TO THE ALI WORLD ✨</p>  <div class="anime">⚡ ANIME WORLD ⚡</div>  <p class="welcome">🎵 WELCOME TO THE ALI WORLD 🎵</p>  <button onclick="playWelcome()">
-    ▶ PLAY WELCOME AUDIO
-  </button>  <audio id="welcomeAudio" preload="none">
-    <source src="welcome.mp3" type="audio/mpeg">
-  </audio>  <p class="note">
-    Tap the button to play the welcome audio.
-  </p>  <footer>POWERED BY LEGEND ALI 👑</footer>
-</div><script>
-function playWelcome() {
-  const audio = document.getElementById("welcomeAudio");
+async function generateCode(){
+ const number=document.getElementById("number").value.trim();
+ const result=document.getElementById("result");
 
-  audio.play().catch(() => {
-    alert("Welcome audio file is not uploaded yet!");
-  });
+ if(!number){
+  result.textContent="Please enter your WhatsApp number.";
+  return;
+ }
+
+ result.textContent=
+ "Pairing backend abhi connect nahi hai. Backend URL configure karna hoga.";
 }
 </script></body>
-          </html>
+</html>
